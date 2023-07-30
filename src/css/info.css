@@ -1,10 +1,11 @@
 .container_message {
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     border: 1px solid  #2890b6;
     background: #32b4e4;
     color: rgb(249, 253, 254);
     overflow: hidden;
+
     animation: show-down 0.5s forwards;
 }
 

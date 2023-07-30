@@ -25,6 +25,18 @@
     flex-direction: column;
 }
 
+.containerDetails {
+    height: 100%;
+    width: 100%;
+}
+
+.subContainer {
+    height: calc(100% - 10rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body{
     max-height: 100vh;
     width: 100vw;

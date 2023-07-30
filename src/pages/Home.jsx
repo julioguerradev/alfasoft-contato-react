@@ -22,13 +22,15 @@ function Home() {
   }
 
   return (
-    <>
-      <h1 className="main_title">Lista de Contatos</h1>
-      <FormContact onAddItem={onAddItem} qtd={data.length}></FormContact>
-      <div className="objects-box">
+    <div className="containerDetails">
+      <div className="top_container">
+        <h1 className="main_title">Lista de Contatos</h1>
+      </div>
+      {/* <FormContact onAddItem={onAddItem} qtd={data.length}></FormContact> */}
+      <div className="subContainer">
         {data.length === 0 ? <Empty /> : <Cards list={data} onDelete={onDelete} />}
       </div>
-    </>
+    </div>
   );
 }
 
