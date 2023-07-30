@@ -16,9 +16,13 @@ function Home() {
     let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
     if(savedItems){
       setData(savedItems)
-      localStorage.setItem(SAVED_ITEMS, JSON.stringify(data))
+      console.log(savedItems)
     }
   }, [])
+
+  React.useEffect(() => {
+    localStorage.setItem(SAVED_ITEMS, JSON.stringify(data))
+  })
 
   const onDelete = (id) => {
     setData(data.filter(item => id !== item.id))
