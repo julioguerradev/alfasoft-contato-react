@@ -1,22 +1,28 @@
 import { Link } from "react-router-dom";
 
-function Person({ list, onDelete }) {
+function Person(props) {
+  
   return (
+    <>
     <main className="container">
       <div className="content">
-        <h2>{list.name}</h2>
-        <p>{list.mail}</p>
+        <h2>{props.list.name}</h2>
+        <p>{props.list.mail}</p>
 
         <div className="actions">
-          <Link to={`/details/${list.id}`} >
+          <Link to={`/details/${props.list.id}`} >
             <button className="success_button">Detalhes</button>
           </Link>
-          <button onClick={() => onDelete(list.id)} className="delete_button">Deletar</button>
+          <button onClick={() => {
+						    props.onActivate('active')
+                props.getId(props.list.id)
+              }
+						} className="delete_button">Deletar</button>
         </div>
-        
       </div>
-        <img src = {list.image} alt="image of a person" />
+        <img src = {props.list.image} alt="image of a person" />
     </main>
+    </>
   )
 }
 

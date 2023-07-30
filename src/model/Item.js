@@ -1,11 +1,13 @@
 class Item{
   static lastId = 1;
 
-  constructor({name, contact, mail}){
-    this.id = Item.lastId++
+  constructor({id, name, contact, mail, about}){
+    // this.id = Item.lastId++
+    this.id = id
     this.name = name
     this.contact = contact
     this.mail = mail
+    this.about = about
     this.image = ''
   }
 }

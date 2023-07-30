@@ -15,6 +15,10 @@ function EmptyInfo() {
                     <br/>
                     <div id="instrucoes">
                         <p>
+                            <strong>Primeiro: </strong>
+                            Clique em criar contato e preencha todo o formulário
+                        </p>
+                        {/* <p>
                             <strong>Primeiro: </strong> Preencha o nome que ve conter no mínimo 5 caracteres.
                         </p>
                         <p>
@@ -22,7 +26,7 @@ function EmptyInfo() {
                         </p>
                         <p>
                             <strong>Terceiro: </strong> Preencha o email com algum email válido.
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             </div>

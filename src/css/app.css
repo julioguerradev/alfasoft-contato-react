@@ -64,7 +64,6 @@ button {
 .subContainer {
     height: calc(100% - 10rem);
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -95,3 +94,35 @@ button {
     margin: 2rem 0;
     background-color: green;
 }
+.new_button a {
+    color: #fff;
+}
+
+
+.delete_button {
+    background: #bf0000;
+  }
+  
+  .success_button {
+    background: #2687ab;
+  }
+  
+  .delete_button:hover{
+    color: #fff;
+    background: #990000;
+    border-color: #990000;
+  }
+  
+  .delete_button:active {
+    background: #730000;
+  }
+  
+  .success_button:hover {
+    color: #fff;
+    background: #1e6c89;
+    border-color: #1e6c89;
+  }
+  
+  .success_button:active {
+    background: #165167;
+  }

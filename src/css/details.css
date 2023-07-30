@@ -36,10 +36,6 @@
     color: #2687ab;
 }
 
-/* .infoDetails > .info:nth-last-child(){
-    border: 1px solid red;
-} */
-
 .mainContactsInfo {
     display: flex;
     justify-content: space-between;

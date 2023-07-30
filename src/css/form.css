@@ -3,6 +3,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    animation: .5s show-down forwards;
 }
 
 #form_container {
@@ -42,3 +44,13 @@ form {
     font-size: .9rem;
 }
 
+@keyframes show-down {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

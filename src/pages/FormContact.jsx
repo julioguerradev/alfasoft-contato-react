@@ -9,6 +9,7 @@ import HomeImg from '../images/white-home.jpg'
 const SAVED_ITEMS = "savedItems"
 
 function FormContact(props){
+    
     const [data, setData] = React.useState([]);
 
     const [name, setName] = React.useState('');
@@ -31,10 +32,11 @@ function FormContact(props){
         event.preventDefault()
 
         const objetoFinal = {
-            id: props.qtd,
+            id: data.length + 1,
             name: name,
             contact: contact,
             mail: mail,
+            about: about
         }
 
         let it = new Item(objetoFinal)

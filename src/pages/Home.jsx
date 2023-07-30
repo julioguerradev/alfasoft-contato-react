@@ -20,6 +20,7 @@ function Home() {
 
   const onDelete = (id) => {
     setData(data.filter(item => id != item.id))
+    localStorage.setItem(SAVED_ITEMS, JSON.stringify(data))
   }
 
   return (
@@ -29,9 +30,11 @@ function Home() {
       </div>
       <div className="subContainer">
         <div className="actionsBar">
-          <Link to="/create">
-            <button className="new_button">Criar contato</button>
-          </Link>
+            <Link to="/create">
+              <button className="new_button">
+                Criar contato
+              </button>
+            </Link>
         </div>
         {data.length === 0 ? <Empty /> : <Cards list={data} onDelete={onDelete} />}
       </div>

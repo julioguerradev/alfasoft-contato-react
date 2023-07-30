@@ -1,15 +1,14 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
-import List from "../model/List";
-
 import '../css/details.css'
 import HomeImg from '../images/white-home.jpg'
 
 function Details() {
 
     const {id} = useParams()
-    const contacts = List.find(contact => contact.id === parseInt(id))
+    const list = JSON.parse(localStorage.getItem('savedItems'))
+    const contacts = list.find(contact => contact.id === parseInt(id))
 
     return (
         <div className="containerDetails">
@@ -42,7 +41,7 @@ function Details() {
                     </div>
                     <div className="info">
                         <h4>Sobre:</h4>
-                        <p>{contacts.info}</p>
+                        <p>{contacts.about}</p>
                     </div>
                 </div>
             </div>

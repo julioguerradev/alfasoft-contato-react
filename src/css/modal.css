@@ -1,0 +1,56 @@
+.modal_container {
+    display: none;
+}
+
+.modal_container.active {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: .5s show-down forwards;
+}
+
+.card_modal {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.modal_titulo {
+    font-weight: 700;
+    color: #32b4e4;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.modal_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+}
+
+.modal_actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@keyframes show-down {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
