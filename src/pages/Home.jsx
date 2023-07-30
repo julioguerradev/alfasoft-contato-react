@@ -3,22 +3,23 @@ import React from "react";
 import '../css/app.css'
 import '../css/card.css'
 
-import FormContact from "../components/FormContact";
 import Empty from "../components/EmptyInfo";
-import Item from "../model/Item";
 import Cards from "../components/Cards";
+import { Link } from "react-router-dom";
 
+const SAVED_ITEMS = "savedItems"
 
 function Home() {
   const [data, setData] = React.useState([]);
 
+  React.useEffect(() => {
+    let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
+    if(savedItems)
+      setData(savedItems)
+  }, [])
+
   const onDelete = (id) => {
     setData(data.filter(item => id != item.id))
-  }
-
-  const onAddItem = (item) => {
-    let it = new Item(item)
-    setData([...data, it])
   }
 
   return (
@@ -26,8 +27,12 @@ function Home() {
       <div className="top_container">
         <h1 className="main_title">Lista de Contatos</h1>
       </div>
-      {/* <FormContact onAddItem={onAddItem} qtd={data.length}></FormContact> */}
       <div className="subContainer">
+        <div className="actionsBar">
+          <Link to="/create">
+            <button className="new_button">Criar contato</button>
+          </Link>
+        </div>
         {data.length === 0 ? <Empty /> : <Cards list={data} onDelete={onDelete} />}
       </div>
     </div>

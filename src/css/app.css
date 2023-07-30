@@ -8,8 +8,39 @@
     height: 100vh;
 }
 
-#root > .main_container{
-  /* padding-bottom: 5rem; */
+body{
+    max-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background: #FFFFFF;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    width: 65px;
+    cursor: pointer;
+  
+    display: flex;
+    justify-content: center;
+    transition: all .3s;
 }
 
 .main_container{
@@ -35,28 +66,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-body{
-    max-height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-    background: #FFFFFF;
-    margin: 0;
-}
-
-button {
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    width: 65px;
-    cursor: pointer;
-  
-    display: flex;
-    justify-content: center;
-    transition: all .3s;
+.actionsBar {
+    width: 100%;
 }
 
 .main_title {
@@ -76,15 +90,8 @@ button {
     object-fit: cover;
 }
 
-a {
-    text-decoration: none;
-}
-
-img {
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center 30%;
+.new_button {
+    width: auto;
+    margin: 2rem 0;
+    background-color: green;
 }

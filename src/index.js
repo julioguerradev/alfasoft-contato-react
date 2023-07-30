@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter} from "react-router-dom";
 
 import Home from './pages/Home';
 import Details from './pages/Details';
+import Form from "./pages/FormContact";
 import Header from "./components/Header";
 
 import './index.css';
@@ -19,6 +20,7 @@ root.render(
       <BrowserRouter>        
             <Routes>
                 <Route path="/" element={<Home />}  />
+                <Route path="/create" element={<Form />}  />
                 <Route path="/details/:id" element={<Details />}  />
             </Routes>
         </BrowserRouter>

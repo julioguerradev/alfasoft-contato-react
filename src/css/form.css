@@ -7,7 +7,8 @@ form {
 
 #form_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
@@ -23,7 +24,8 @@ form {
     margin-bottom: .3rem;
 }
 
-.input_fields input {
+.input_fields input,
+.input_fields textarea {
     padding: .5rem .8rem;
     border-radius: 10px;
     border: 1px solid #e3e3e3;
