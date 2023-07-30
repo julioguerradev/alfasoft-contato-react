@@ -72,6 +72,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  width: 80%;
+
+  padding-bottom: 5rem;
 }
 .objects-box .object {
   animation: show-down 0.5s forwards;

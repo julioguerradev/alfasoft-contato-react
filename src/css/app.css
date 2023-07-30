@@ -4,17 +4,25 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#root {
+    height: 100vh;
+}
+
 #root > .main_container{
-  padding-bottom: 5rem;
+  /* padding-bottom: 5rem; */
 }
 
 .main_container{
+    height: calc(100% - 70px);
     box-sizing: border-box;
     max-width: 1200px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 20px;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 body{
@@ -37,7 +45,24 @@ button {
     display: flex;
     justify-content: center;
     transition: all .3s;
-  }
+}
+
+.main_title {
+    align-self: flex-start;
+    color: #2890b6;
+}
+
+.back_button {
+    background: #014a76;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    padding: 7px;
+}
+
+.back_button img{
+    object-fit: cover;
+}
 
 a {
     text-decoration: none;
@@ -45,8 +70,9 @@ a {
 
 img {
     border-radius: 10px;
-    height: inherit;
-    width: inherit;
+    height: 100%;
+    width: 100%;
+    display: block;
     object-fit: cover;
     object-position: center 30%;
 }
