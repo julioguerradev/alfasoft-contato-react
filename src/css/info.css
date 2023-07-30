@@ -1,0 +1,40 @@
+.container_message {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid  #2890b6;
+    background: #32b4e4;
+    color: rgb(249, 253, 254);
+    overflow: hidden;
+    animation: show-down 0.5s forwards;
+}
+
+#info_header {
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#infor_body {
+    text-align: center;
+}
+
+#instrucoes {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem auto;
+    gap: .3rem;
+}
+
+  
+@keyframes show-down {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
