@@ -14,13 +14,14 @@ function Home() {
 
   React.useEffect(() => {
     let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
-    if(savedItems)
+    if(savedItems){
       setData(savedItems)
+      localStorage.setItem(SAVED_ITEMS, JSON.stringify(data))
+    }
   }, [])
 
   const onDelete = (id) => {
-    setData(data.filter(item => id != item.id))
-    localStorage.setItem(SAVED_ITEMS, JSON.stringify(data))
+    setData(data.filter(item => id !== item.id))
   }
 
   return (
