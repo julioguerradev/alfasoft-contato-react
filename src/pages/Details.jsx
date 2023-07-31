@@ -13,15 +13,18 @@ function Details() {
     return (
         <div className="containerDetails">
             <div className="top_container">
-                <h1 className="main_title">Detlhes</h1>
-                <Link to={"/edit/" + contacts.id}>
-                    <button>Editar</button>
-                </Link>
-                <Link to="/">
-                    <button className="back_button">
-                        <img src={HomeImg} alt="" />
-                    </button>
-                </Link>
+                <h1 className="main_title">Detalhes</h1>
+                <div className="actionsBar">
+                    <Link to={"/edit/" + contacts.id}>
+                        <button className="edit_button">Editar</button>
+                    </Link>
+                    <Link to="/">
+                        <button className="back_button">
+                            <img src={HomeImg} alt="" />
+                        </button>
+                    </Link>
+                </div>
+                
             </div>
             <div className="details">
                 <div className="photoDetails">

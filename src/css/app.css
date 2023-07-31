@@ -40,6 +40,7 @@ button {
   
     display: flex;
     justify-content: center;
+    align-items: center;
     transition: all .3s;
 }
 
@@ -72,6 +73,13 @@ button {
     width: 100%;
 }
 
+.top_container .actionsBar {
+    border: 1px solid red;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+
 .main_title {
     align-self: flex-start;
     color: #2890b6;
@@ -98,6 +106,18 @@ button {
     color: #fff;
 }
 
+.edit_button {
+    height: 100%;
+    background: #efde47;
+}
+
+.edit_button:hover {
+    background: #d7c840;
+}
+
+.edit_button:active {
+    background: #bfb239;
+}
 
 .delete_button {
     background: #bf0000;
