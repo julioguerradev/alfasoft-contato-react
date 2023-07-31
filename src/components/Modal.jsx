@@ -14,12 +14,12 @@ function Modal(props) {
                     </p>
                 </div>
                 <div className="modal_actions">
-                    <button className='delete_button' onClick={() => {props.onActivate('')}}>Cancelar</button>
+                    <button className='success_button' onClick={() => {props.onActivate('')}}>Cancelar</button>
                     
                     <button onClick={() => {
                         props.onDelete(props.passDeleteId)
                         props.onActivate('')}
-                        } className="success_button">Sim</button>
+                        } className="delete_button">Sim</button>
                 </div>
             </div>
         </div>
