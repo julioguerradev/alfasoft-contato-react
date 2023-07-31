@@ -41,7 +41,6 @@ function FormContact(props){
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        
         if(!contacts){
             const objetoFinal = {
                 id: data.length + 1,
@@ -76,11 +75,11 @@ function FormContact(props){
                 <div id="form_container">
                     <div className="input_fields">
                         <label htmlFor="name">Nome: </label>
-                        <input onChange={(e) => setName(e.target.value)} id="name" name="name" type="text" value={name}></input>
+                        <input onChange={(e) => setName(e.target.value)} id="name" name="name" type="text" value={name} minLength="5" required></input>
                     </div>
                     <div className="input_fields">
                         <label htmlFor="contact">Contato: </label>
-                        <input onChange={(e) => setContact(e.target.value)} id="contact" name="contact" type="tel" value={contact}></input>
+                        <input onChange={(e) => setContact(e.target.value)} id="contact" name="contact" type="tel" value={contact} minLength="9" required></input>
                     </div>
                     <div className="input_fields">
                         <label htmlFor="mail">Email: </label>

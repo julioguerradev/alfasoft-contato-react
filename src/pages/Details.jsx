@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import '../css/details.css'
 import HomeImg from '../images/white-home.jpg'
+import Pencil from '../images/whien-pencil.png'
 
 function Details() {
 
@@ -16,7 +17,9 @@ function Details() {
                 <h1 className="main_title">Detalhes</h1>
                 <div className="actionsBar">
                     <Link to={"/edit/" + contacts.id}>
-                        <button className="edit_button">Editar</button>
+                        <button className="edit_button">
+                            <img src={Pencil} alt="" />
+                        </button>
                     </Link>
                     <Link to="/">
                         <button className="back_button">
