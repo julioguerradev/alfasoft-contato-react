@@ -89,9 +89,9 @@ function FormContact(props) {
         </Link>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="photoDetails">
-          {imageBase64 && <img src={imageBase64} alt="Imagem selecionada" />}
-        </div>
+        
+          {imageBase64 && <div className="photoDetails"> <img src={imageBase64} alt="Imagem selecionada" /> </div>}
+        
         <div className="input_fields">
           <label htmlFor="image">Imagem: </label>
           <input onChange={handleImageChange} id="image" name="image" type="file" accept="image/*" required></input>
