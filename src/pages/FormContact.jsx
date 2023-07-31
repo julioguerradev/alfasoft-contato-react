@@ -89,29 +89,36 @@ function FormContact(props) {
         </Link>
       </div>
       <form onSubmit={handleSubmit}>
+        <div className="photoDetails">
+          {imageBase64 && <img src={imageBase64} alt="Imagem selecionada" />}
+        </div>
+        <div className="input_fields">
+          <label htmlFor="image">Imagem: </label>
+          <input onChange={handleImageChange} id="image" name="image" type="file" accept="image/*" required></input>
+        </div>
         <div id="form_container">
-          <div className="input_fields">
-            <label htmlFor="name">Nome: </label>
-            <input onChange={(e) => setName(e.target.value)} id="name" name="name" type="text" value={name} minLength="5" required></input>
+          <div className="first_container">
+            <div className="input_fields">
+              <label htmlFor="name">Nome: </label>
+              <input onChange={(e) => setName(e.target.value)} id="name" name="name" type="text" value={name} minLength="5" required></input>
+            </div>
+            <div className="input_fields">
+              <label htmlFor="contact">Contato: </label>
+              <input onChange={(e) => setContact(e.target.value)} id="contact" name="contact" type="tel" value={contact} minLength="9" required></input>
+            </div>
+            <div className="input_fields">
+              <label htmlFor="mail">Email: </label>
+              <input onChange={(e) => setMail(e.target.value)} id="mail" name="mail" type="text" value={mail}></input>
+            </div>
           </div>
-          <div className="input_fields">
-            <label htmlFor="contact">Contato: </label>
-            <input onChange={(e) => setContact(e.target.value)} id="contact" name="contact" type="tel" value={contact} minLength="9" required></input>
+          <div className="second_container">
+            <div className="input_fields">
+              <label htmlFor="about">Sobre: </label>
+              <textarea onChange={(e) => setAbout(e.target.value)} name="about" id="about" cols="30" rows="10" value={about}>
+              </textarea>
+            </div>
           </div>
-          <div className="input_fields">
-            <label htmlFor="mail">Email: </label>
-            <input onChange={(e) => setMail(e.target.value)} id="mail" name="mail" type="text" value={mail}></input>
-          </div>
-          <div className="input_fields">
-            <label htmlFor="about">Sobre: </label>
-            <textarea onChange={(e) => setAbout(e.target.value)} name="about" id="about" cols="30" rows="10" value={about}>
-            </textarea>
-          </div>
-          <div className="input_fields">
-            <label htmlFor="image">Imagem: </label>
-            <input onChange={handleImageChange} id="image" name="image" type="file" accept="image/*" required></input>
-            {imageBase64 && <img src={imageBase64} alt="Imagem selecionada" />} {/* Renderiza a imagem selecionada */}
-          </div>
+
         </div>
         <button className="success_button send_button" type="submit">{contacts ? 'Editar' : 'Cadastrar'}</button>
       </form>

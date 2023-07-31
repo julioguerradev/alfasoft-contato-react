@@ -19,7 +19,7 @@ function Modal(props) {
                     <button onClick={() => {
                         props.onDelete(props.passDeleteId)
                         props.onActivate('')}
-                        } className="delete_button">Sim</button>
+                        } className="delete_button">Apagar</button>
                 </div>
             </div>
         </div>

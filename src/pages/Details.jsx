@@ -30,7 +30,7 @@ function Details() {
                 
             </div>
             <div className="details">
-                <div className="photoDetails">
+                <div className="photoDetails left">
                     <img src={contacts.image} alt="perfil" />
                 </div>
                 <div className="infoDetails">

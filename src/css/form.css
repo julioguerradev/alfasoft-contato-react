@@ -19,6 +19,9 @@ form {
     flex-direction: column;
 }
 
+.left {
+    place-self: flex-start;
+}
 
 .input_fields label {
     font-weight: 700;
