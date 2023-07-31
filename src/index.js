@@ -21,6 +21,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<Home />}  />
                 <Route path="/create" element={<Form />}  />
+                <Route path="/edit/:id" element={<Form />}  />
                 <Route path="/details/:id" element={<Details />}  />
             </Routes>
         </BrowserRouter>

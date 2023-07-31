@@ -14,6 +14,9 @@ function Details() {
         <div className="containerDetails">
             <div className="top_container">
                 <h1 className="main_title">Detlhes</h1>
+                <Link to={"/edit/" + contacts.id}>
+                    <button>Editar</button>
+                </Link>
                 <Link to="/">
                     <button className="back_button">
                         <img src={HomeImg} alt="" />

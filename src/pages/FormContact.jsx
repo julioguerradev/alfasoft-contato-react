@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Item from "../model/Item";
 
@@ -9,8 +9,11 @@ import HomeImg from '../images/white-home.jpg'
 const SAVED_ITEMS = "savedItems"
 
 function FormContact(props){
-    
     const [data, setData] = React.useState([]);
+
+    const {id} = useParams()
+    const list = JSON.parse(localStorage.getItem(SAVED_ITEMS))
+    const contacts = list.find(contact => contact.id === parseInt(id))
 
     const [name, setName] = React.useState('');
     const [contact, setContact] = React.useState('');
@@ -21,6 +24,13 @@ function FormContact(props){
         let savedItems = JSON.parse(localStorage.getItem(SAVED_ITEMS))
         if(savedItems)
           setData(savedItems)
+
+        if(contacts){
+            setName(contacts.name)
+            setContact(contacts.contact)
+            setMail(contacts.mail)
+            setAbout(contacts.about)
+        }
       }, [])
 
     React.useEffect(() => {
@@ -31,21 +41,25 @@ function FormContact(props){
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const objetoFinal = {
-            id: data.length + 1,
-            name: name,
-            contact: contact,
-            mail: mail,
-            about: about
+        
+        if(!contacts){
+            const objetoFinal = {
+                id: data.length + 1,
+                name: name,
+                contact: contact,
+                mail: mail,
+                about: about
+            }
+            let it = new Item(objetoFinal)
+            setData([...data, it])
+        }else {
+            contacts.name = name
+            contacts.contact = contact
+            contacts.mail = mail
+            contacts.about = about
+            
+            setData(list)
         }
-
-        let it = new Item(objetoFinal)
-        setData([...data, it])
-
-        setName('')
-        setContact('')
-        setMail('')
-        setAbout('')
     }
 
     return (
@@ -78,7 +92,7 @@ function FormContact(props){
                         </textarea>
                     </div>
                 </div>
-                <button className="success_button send_button" type="Submit">Cadastrar</button>
+                <button className="success_button send_button" type="Submit">{contacts ? 'Editar' : 'Cadastrar'}</button>
             </form>
         </div>
     );
